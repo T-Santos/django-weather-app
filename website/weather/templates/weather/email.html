@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+
+	{% if weather_msg %}
+	    <p>
+			{{weather_msg}}
+	    </p>
+	{% endif %}    
+
+	{% if weather_link %}
+	    <p>
+			<img src="{{ weather_link }}" alt='weather'>
+	    </p>
+	{% endif %}
+
+	{% if weather_credit %}
+
+		<p> Local weather provided by: </p>
+
+		<a href="{{ weather_credit_url }}">
+		    <p>
+				<img src="{{ weather_credit }}" alt='credit' alt width="365" alt height="49">
+			</p>
+		</a>
+{% endif %}
+
+    </body>
+</html>

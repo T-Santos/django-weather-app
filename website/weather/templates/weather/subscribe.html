@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{# *** Opting out *** #}
+
+{% block email_subscription_success %}
+{% endblock %}
+
+{% block email_subscription_success_title_text %}
+{% endblock %}
+
+{# *** End of opt out *** #}
+
+{# *** Content *** #}
+
+{% block email_subscription_title_text %}
+	{{ block.super }}
+	{{ subscription_type }}
+{% endblock %}
+
+{% block email_subscription_content %}
+	{{ block.super }}
+	{% crispy weather_form %}
+{% endblock %}
+

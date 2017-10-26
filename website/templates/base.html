@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+
+    <title>Email Discounts</title>
+
+    {% include 'base_css.html' %}
+
+  </head>
+
+  <body>
+    {% include 'navbar.html' %}
+
+    <!-- used for generic email subscription look and feel -->
+    {% block email_subscription_wrapper %}
+    <div class="container">
+      <div class="jumbotron">
+
+      <!-- this is the content for the signup page -->
+      {% block email_subscription_title %}
+        <h1> Subscribe to {% block email_subscription_title_text %}{% endblock %} based discounts.</h1>
+      {% endblock %}
+      {% block email_subscription_content %}
+      {% endblock %}
+
+      <!-- this is the content upon success subsciption -->
+      {% block email_subscription_success %}
+        <h2>You have successfully subscribed to {% block email_subscription_success_title_text %}{% endblock %}  based discounts!</h2>
+      {% endblock %}
+
+      </div>
+    </div>
+    {% endblock %} 
+
+    <div>Favicon made by 
+      <a href="http://www.freepik.com" title="Freepik">Freepik</a> 
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    {% include 'base_js.html' %}    
+  </body>
+</html>
